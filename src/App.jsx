@@ -16,6 +16,14 @@ const App = () => {
     })
   }
 
+  const handleSuccess = () => {
+    setPosition({
+      y: 0,
+      x: 0
+    })
+    setFlower(true)
+  }
+
   return (
     <div className="min-h-screen flex justify-center items-center flex-col ">
       <h4 className="text-3xl">Do you want a flower ?</h4>
@@ -29,7 +37,7 @@ const App = () => {
           width: 200,
         }} />}
       <div className="space-x-5 relative mt-5">
-        <button onClick={() => setFlower(true)} className="py-2 px-8 text-white rounded-lg shadow-lg bg-blue-500">Yes</button>
+        <button onClick={handleSuccess} className="py-2 px-8 text-white rounded-lg shadow-lg bg-blue-500">Yes</button>
         <button
           onMouseEnter={handleChangePosition}
           key={position.y + position.x}
