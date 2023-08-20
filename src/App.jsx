@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center flex-col ">
-      <h4 className="text-3xl">Do you want a flower ?</h4>
+      {!flower && <h4 className="text-3xl">Do you want a flower ?</h4>}
       {flower ?
         <Lottie animationData={flowerGift} style={{
           height: 200,
@@ -36,7 +36,7 @@ const App = () => {
           height: 200,
           width: 200,
         }} />}
-      <div className="space-x-5 relative mt-5">
+      {!flower && <div className="space-x-5 relative mt-5">
         <button onClick={handleSuccess} className="py-2 px-8 text-white rounded-lg shadow-lg bg-blue-500">Yes</button>
         <button
           onMouseEnter={handleChangePosition}
@@ -46,7 +46,7 @@ const App = () => {
             top: position.y,
             left: position.x,
           }}>No</button>
-      </div>
+      </div>}
       {flower && <div className="fixed bottom-0 right-0 left-0 flex justify-center ">
         <Lottie animationData={flower2} style={{
           height: 200,
